@@ -3,13 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.12",
+    "@types/node-sass": "^4.11.1",
+    "apollo-link-context": "^1.0.20",
+    "formik": "^2.2.6",
+    "graphql": "^15.5.0",
     "next": "10.0.9",
+    "node-sass": "^5.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-icons": "^4.2.0",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@types/yup": "^0.29.11"
   }
 }
