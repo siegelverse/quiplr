@@ -36,7 +36,7 @@ export default function Login() {
 
     return (
         <div className={styles.login_container}>
-            <img src={'../styles/assets/quipler-light.svg'} alt='logo' style={{width: '50px'}} className={styles.logo}/>
+            <img src={'../../quipler-light.svg'} alt='logo' style={{width: '50px'}} className={styles.logo}/>
             <h3 className={styles.message}>Log in to quipler</h3>
             <Formik 
             initialValues={initialValues} 
