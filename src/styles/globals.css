@@ -1,14 +1,50 @@
+:root {
+  --primary-color: #EB5757;
+  --button-hover-color: #CA2B2B;
+  --background-color-dark: #333333;
+  --text-color-light: ##FFF9FA;
+}
+
+@import './login.module.css';
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text-color-light);
+  background-color: var(--background-color-dark);
 }
 
 a {
-  color: inherit;
+  color: var(--primary-color);
   text-decoration: none;
+}
+
+button,
+button span {
+  border-radius: 25px;
+}
+button {
+    background-color: var(--primary-color);
+    border: 0;
+    color: #333333;
+    font-weight: bold;
+}
+button span {
+    display: block;
+    padding: 0.4em 0.2em;
+    transition: all 0.1s linear;
+    font-size: 15px;
+}
+button:hover {
+    background: var(--button-hover-color);
+}
+button:active span {
+    background-color: rbga(0, 0, 0, 0.2);
+}
+button span:focus {
+    outline: 0;
+}
+button:disabled {
+    opacity: 0.5;
 }
 
 * {

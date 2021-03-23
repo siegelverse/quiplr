@@ -13,7 +13,7 @@ interface Props {
     children?: React.ReactNode
 }
 
-export default function IsAuth({ children }: Props) {
+export default function IsAuth({ children }: Props): JSX.Element {
     const router = useRouter();
     const { loading, error, data } = useQuery(IS_LOGGED_IN);
     if (loading) return <p>Loading...</p>

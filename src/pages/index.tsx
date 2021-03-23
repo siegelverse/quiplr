@@ -1,4 +1,4 @@
-import IsAuth from "../components/isAuth";
+import IsAuth from "../components/IsAuth";
 import Layout from "../components/Layout/Layout";
 import Users from "../components/Users";
 import WelcomePage from "./welcome";

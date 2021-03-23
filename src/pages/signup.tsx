@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import { gql, useMutation } from '@apollo/client';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import styles from '../styles/login.module.css';
+import Link from 'next/link';
 
 const SIGNUP_MUTATION = gql`
     mutation signup($name: String, $email: String!, $password: String!) {
@@ -38,8 +40,9 @@ export default function Signup() {
     })
 
     return (
-        <div>
-            <h1>Sign up</h1>
+        <div className={styles.login_container}>
+            <img src={'../../quipler-light.svg'} alt='logo' style={{width: '80px'}} className={styles.logo}/>
+            <h3 className={styles.message}>Sign up</h3>
             <Formik 
             initialValues={initialValues} 
             validationSchema={validationSchema}
@@ -54,7 +57,7 @@ export default function Signup() {
                 router.push('/')
             }}
             >
-                <Form>
+                <Form className={styles.login_form}>
                     <Field name='email' type='text' placeholder='Email'/>
                     <ErrorMessage name='email' component={'div'} />
                     <Field name='name' type='text' placeholder='Name'/>
@@ -63,9 +66,13 @@ export default function Signup() {
                     <ErrorMessage name='password' component={'div'} />
                     <Field name='confirmPassword' type='password' placeholder='Confirm Password'/>
                     <ErrorMessage name='confirmPassword' component={'div'} />
-                    <button type='submit'>Signup</button>
+                    <button type='submit' className={styles.login_button}>Signup</button>
                 </Form>
             </Formik>
+            <div className={styles.register}>
+                <h4>Already have an account?</h4>
+                <Link href='/login'>Log in</Link>
+            </div>
         </div>
     )
 }

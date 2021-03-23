@@ -2,7 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { gql, useMutation } from '@apollo/client';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import styles from '../styles/login.module.css';
 import * as Yup from 'yup';
+import Link from 'next/link';
 
 const LOGIN_MUTATION = gql`
     mutation login($email: String!, $password: String!) {
@@ -16,6 +18,7 @@ interface LoginValues {
     email: string,
     password: string,
 }
+
 
 export default function Login() {
     const router = useRouter();
@@ -32,8 +35,9 @@ export default function Login() {
     })
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className={styles.login_container}>
+            <img src={'../styles/assets/quipler-light.svg'} alt='logo' style={{width: '50px'}} className={styles.logo}/>
+            <h3 className={styles.message}>Log in to quipler</h3>
             <Formik 
             initialValues={initialValues} 
             validationSchema={validationSchema}
@@ -48,14 +52,18 @@ export default function Login() {
                 router.push('/')
             }}
             >
-                <Form>
+                <Form className={styles.login_form}>
                     <Field name='email' type='text' placeholder='Email'/>
                     <ErrorMessage name='email' component={'div'} />
                     <Field name='password' type='password' placeholder='Password'/>
                     <ErrorMessage name='password' component={'div'} />
-                    <button type='submit'>Login</button>
+                    <button type='submit' className={styles.login_button}>Login</button>
                 </Form>
             </Formik>
+            <div className={styles.register}>
+                <h4>Sign up for quiplr</h4>
+                <Link href={'/signup'}>Sign up</Link>
+            </div>
         </div>
     )
 }
