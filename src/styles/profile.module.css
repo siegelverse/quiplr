@@ -1,0 +1,121 @@
+.profile {
+	position: relative;
+	border: 1px solid var(--accent);
+}
+.nickname {
+	/* margin-top: -15px; */
+	margin-bottom: 30px;
+	margin-top: 5px;
+}
+
+.profile_info {
+	padding-left: 20px;
+	border-bottom: 10px solid var(--accent);
+}
+.name_title {
+	font-weight: bold;
+	font-size: 20px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+}
+.name {
+	text-align: left;
+}
+.make_profile {
+	display: grid;
+	justify-items: end;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.description {
+	grid-column: 1/3;
+}
+.likes {
+	grid-column: 1;
+}
+
+.back_arrow {
+	margin: 10px;
+	color: var(--primary-color);
+	margin-top: 10;
+    cursor: pointer;
+}
+.back_arrow:hover {
+    transform:  scale(1.5);
+}
+
+.date {
+	color: var(--accent);
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 14px;
+}
+.network-stats {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.profile_head {
+	/* width: 105%; */
+	display: grid;
+	grid-template-columns: 0.5fr 1fr 9fr;
+	border-bottom: 1px var(--accent);
+	margin-left: -20px;
+}
+
+.followers {
+	display: grid;
+	grid-template-columns: 3fr 3fr 6fr;
+}
+
+.primary {
+	display: grid;
+	grid-template-columns: 0.7fr 1.3fr 0.9fr;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 50px;	
+}
+
+.left {
+	grid-column: 1 / 2;
+	
+}
+
+.right {
+	grid-column: 3/ 4;
+	margin-left: 20px;	
+}
+.right div {
+	position: sticky;
+	top: 0;
+}
+
+.drop_down {
+	position: relative;
+}
+
+@media only screen and (max-width: 900px) {
+    .right {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .primary {
+        display: flex;
+
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .left {
+        margin-left: 0;
+		grid-column: 1;
+		padding: 0;
+		margin: 0;
+    }
+}

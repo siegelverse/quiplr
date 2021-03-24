@@ -27,7 +27,7 @@ const UPDATE_PROFILE_MUTATION = gql`
     }
 `
 
-interface ProfileValues {
+interface UpdateValues {
     id: number
     bio: string
     location: string
@@ -42,25 +42,28 @@ export default function UpdateProfile() {
     })
     const [modalIsOpen, setIsOpen] = useState(false)
 
-    const initialValues: ProfileValues = {
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>{error.message}</p>
+    const initialValues: UpdateValues = {
         id: data.me.Profile.id,
         bio: data.me.Profile.bio, 
         location: data.me.Profile.location,
         website: data.me.Profile.website,
         avatar: data.me.Profile.avatar
     }
-
+    
     const openModal = () => {
         setIsOpen(true)
     }
-
+    
     const closeModal = () => {
         setIsOpen(false)
     }
-
+    
+    console.log(data.me.Profile)
     return (
         <div>
-            <button onClick={openModal}>Update Profile</button>
+            <button onClick={openModal} className={styles.edit_button}>Update Profile</button>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

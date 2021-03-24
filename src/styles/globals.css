@@ -6,6 +6,7 @@
   --background-color-dark: #333333;
   --text-color-light: #FFF9FA;
   --font-family: 'Montserrat', sans-serif;
+  --accent: black;
 }
 
 
@@ -71,6 +72,7 @@ button span:focus {
 button:disabled {
     opacity: 0.5;
 }
+
 
 * {
   box-sizing: border-box;

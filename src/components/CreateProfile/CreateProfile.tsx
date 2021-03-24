@@ -8,13 +8,13 @@ import Modal from 'react-modal';
 import { customStyles } from '../../styles/customModalStyles';
 
 const CREATE_PROFILE_MUTATION = gql`
-    mutation addProfileForUser(
+    mutation createProfile(
         $bio: String
         $location: String
         $website: String
         $avatar: String
     ) {
-        addProfileForUser(
+        createProfile(
             bio: $bio
             location: $location
             website: $website
@@ -55,7 +55,7 @@ export default function CreateProfile() {
 
     return (
         <div>
-            <button onClick={openModal}>Create Profile</button>
+            <button onClick={openModal} className={styles.edit_button}>Create Profile</button>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
