@@ -74,6 +74,10 @@
     width: auto;
     text-align: center;
 }
+
+.main .center .btn_sign_up:hover {
+    background-color: rgba(129, 7, 27, 0.2);
+}
   
 .main .left .items_wrapper .icon {
     font-size: 25px;

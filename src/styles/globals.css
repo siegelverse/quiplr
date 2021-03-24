@@ -23,6 +23,26 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  color: var(--text-color-light);
+  background-color: var(--background-color-dark);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 2px solid var(--primary-color);
+
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  margin-bottom: 27px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 3px var(--primary-color);
+}
+
 button,
 button span {
   border-radius: 25px;

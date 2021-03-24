@@ -35,11 +35,11 @@ export default function WelcomePage() {
             <div className={styles.center}>
                 <img src={'../../quipler-light.svg'} alt="logo" style={{ width: "100px" }} />
                 <h1>
-                    See what's happening in
+                    See what's making people
                 <br />
-                    the world right now
+                    laugh right now
                 </h1>
-                <span>Join quiplr Today.</span>
+                <span>Join quiplr today!</span>
                 <Link href='/signup'>
                     <a className={styles.btn_sign_up}>Sign up</a>
                 </Link>

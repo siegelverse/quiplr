@@ -1,0 +1,30 @@
+.create_profile_form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.create_profile_form input {
+    color: #FFF9FA;
+    background-color: var(--background-color-dark);
+    font-size: 18px;
+    padding: 20px 20px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: var(--primary-color);
+    border-radius: 8px;
+    border-bottom: 1px solid var(--primary-color);
+    margin: 25px 0;
+}
+.create_profile_form input:hover {
+    transition: 300ms ease-in;
+    border: 1px solid var(--primary-color); 
+}
+
+.create_profile_button {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    outline: none;
+}

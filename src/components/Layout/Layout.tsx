@@ -35,7 +35,7 @@ const Layout = ({ children, title = 'quiplr' }) => {
 
             <header className={styles.header}>
                 <Link href='/'>
-                    <img src='/logo.svg' alt='logo' />
+                    <img src='../../../quipler-light.svg' alt='logo' style={{width: '80px'}} />
                 </Link>
                 <button className={styles.theme_toggle} onClick={toggleTheme}>
                     <MdBrightness4 />

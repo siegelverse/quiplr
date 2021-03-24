@@ -17,9 +17,11 @@ export default function IsAuth({ children }: Props): JSX.Element {
     const router = useRouter();
     const { loading, error, data } = useQuery(IS_LOGGED_IN);
     if (loading) return <p>Loading...</p>
-    if (error) return <p>{error.message}</p>
-    if (!data.me) {
-        return router.push('/welcome')
+    // if (error) return <p>{error.message}</p>
+    console.log(data)
+    if (!data) {
+        router.push('/welcome')
+        return <p>Loading...</p>
     }
 
     return <>{children}</>
