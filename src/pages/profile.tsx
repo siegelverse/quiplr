@@ -47,13 +47,17 @@ export default function Profile() {
                             </span>
                         </div>
                         <div className={styles.avatar}>
-                            <FaUser size={70} />
+                            {data.me.Profile.avatar ?  
+                            (<img src={data.me.Profile.avatar} alt='avatar' style={{ width: '125px', borderRadius: '50%' }} />)
+                            : <FaUser size={70} />}
                         </div>
                         <div className={styles.make_profile}>
                             {data.me.Profile ? <UpdateProfile /> : <CreateProfile />}
                         </div>
 
                         <h3 className={styles.name}>{data.me.name}</h3>
+
+                        <p className={styles.location}>{data.me.Profile.location}</p>
 
                         {data.me.Profile ? (
                             <p>

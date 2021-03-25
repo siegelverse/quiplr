@@ -1,11 +1,12 @@
 import { useMutation, useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ME_QUERY } from '../../pages/profile';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import styles from '../CreateProfile/CreateProfile.module.css';
 import Modal from 'react-modal';
 import { customStyles } from '../../styles/customModalStyles';
+import { FaUser } from 'react-icons/fa';
 
 const UPDATE_PROFILE_MUTATION = gql`
     mutation updateProfile(
@@ -36,6 +37,9 @@ interface UpdateValues {
 }
 
 export default function UpdateProfile() {
+    const inputFile = useRef(null)
+    const [image, setImage] = useState('')
+    const [imageLoading, setImageLoading] = useState(false)
     const { loading, error, data } = useQuery(ME_QUERY);
     const [updateProfile] = useMutation(UPDATE_PROFILE_MUTATION, {
         refetchQueries: [{query: ME_QUERY}]
@@ -61,6 +65,23 @@ export default function UpdateProfile() {
     }
     
     console.log(data.me.Profile)
+
+    const uploadImage = async (e) => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', "image-upload")  
+        console.log(data)
+        setImageLoading(true)
+        const res = await fetch(process.env.CLOUDINARY_URL, {
+            method: "POST",
+            body: data
+        })
+        const file = await res.json()
+        console.log(file)
+        setImage(file.secure_url)
+        setImageLoading(false)
+    }
     return (
         <div>
             <button onClick={openModal} className={styles.edit_button}>Update Profile</button>
@@ -70,6 +91,37 @@ export default function UpdateProfile() {
                 contentLabel='Modal'
                 style={customStyles}
             >
+            
+            <input 
+            type='file' 
+            name='file' 
+            placeholder='upload file' 
+            onChange={uploadImage} 
+            ref={inputFile}
+            style={{ display: 'none' }}
+            />
+
+            {imageLoading ? 
+                (<h3>Loading...</h3>)
+                :
+                (
+                    <>
+                        {data.me.Profile.avatar ? (
+                            <span onClick={() => inputFile.current.click()} style={{ cursor: 'pointer' }}>
+                                <img 
+                                    src={data.me.Profile.avatar}
+                                    style={{ width: '50px', borderRadius: '50%' }}
+                                    alt='avatar'
+                                />
+                            </span>
+                        ) : (
+                            <span onClick={() => inputFile.current.click()} style={{ cursor: 'pointer' }}>
+                                <FaUser size={70} />
+                            </span>
+                        )}
+                    </>
+                )
+            }
 
             <Formik 
             initialValues={initialValues} 
@@ -78,7 +130,7 @@ export default function UpdateProfile() {
                 setSubmitting(true)
                 
                 await updateProfile({
-                    variables: values
+                    variables: {...values, avatar: image}
                 })
                 setSubmitting(false)
                 setIsOpen(false)

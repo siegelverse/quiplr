@@ -3,7 +3,6 @@
 	border: 1px solid var(--accent);
 }
 .nickname {
-	/* margin-top: -15px; */
 	margin-bottom: 30px;
 	margin-top: 5px;
 }
@@ -20,6 +19,9 @@
 	left: 50%;
 }
 .name {
+	text-align: left;
+}
+.location {
 	text-align: left;
 }
 .make_profile {
@@ -107,7 +109,7 @@
 	.left {
         display: none;
     }
-	
+
     .right {
         display: none;
     }
