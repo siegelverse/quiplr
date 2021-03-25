@@ -82,7 +82,6 @@
 
 .left {
 	grid-column: 1 / 2;
-	
 }
 
 .right {
@@ -99,6 +98,16 @@
 }
 
 @media only screen and (max-width: 900px) {
+	.primary {
+        display: flex;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+	.left {
+        display: none;
+    }
+	
     .right {
         display: none;
     }
@@ -107,15 +116,11 @@
 @media only screen and (max-width: 600px) {
     .primary {
         display: flex;
-
         margin-right: 0px;
         margin-left: 0px;
     }
 
     .left {
-        margin-left: 0;
-		grid-column: 1;
-		padding: 0;
-		margin: 0;
+        display: none;
     }
 }

@@ -41,7 +41,7 @@ export default function Signup() {
 
     return (
         <div className={styles.login_container}>
-            <img src={'../../quipler-light.svg'} alt='logo' style={{width: '80px'}} className={styles.logo}/>
+            <img src={'../../quiplr-logo-dark.svg'} alt='logo' style={{width: '100px'}} className={styles.logo}/>
             <h3 className={styles.message}>Sign up</h3>
             <Formik 
             initialValues={initialValues} 

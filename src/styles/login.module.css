@@ -1,5 +1,5 @@
 .login_container {
-    background-color: #333333;
+    background-color: var(--background-color-dark);
     width: 30vw;
     margin: 5em auto;
     padding: 32px;
@@ -20,7 +20,7 @@
 }
 
 .login_form input {
-    color: #FFF9FA;
+    color: var(--text-color-light);
     background-color: var(--background-color-dark);
     font-size: 18px;
     padding: 20px 20px 10px 5px;

@@ -6,6 +6,7 @@ import styles from '../styles/profile.module.css';
 import { FaArrowLeft, FaLink, FaUser } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import LeftNav from '../components/LeftNav/LeftNav';
 
 export const ME_QUERY = gql`
     query me {
@@ -32,7 +33,9 @@ export default function Profile() {
     return (
         <>
             <div className={styles.primary}>
-                <div className={styles.left}>Left Nav</div>
+                <div className={styles.left}>
+                    <LeftNav />
+                </div>
                 <div className={styles.profile}>
                     <div className={styles.profile_info}>
                         <div className={styles.profile_head}>

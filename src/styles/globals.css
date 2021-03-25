@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 
 :root {
-  --primary-color: #EB5757;
-  --button-hover-color: #CA2B2B;
-  --background-color-dark: #333333;
+  --primary-color: #F7407A;
+  --button-hover-color: #a31844;
+  --background-color-dark: black;
+  --background-color-light: #FFF9FA;
   --text-color-light: #FFF9FA;
+  --text-color-dark: black;
   --font-family: 'Montserrat', sans-serif;
-  --accent: black;
+  --accent: #F7407A;
 }
 
 
@@ -51,7 +53,7 @@ button span {
 button {
     background-color: var(--primary-color);
     border: 0;
-    color: #333333;
+    color: var(--background-color-dark);
     font-weight: bold;
 }
 button span {
