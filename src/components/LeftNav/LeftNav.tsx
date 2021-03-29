@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FaBell, FaEllipsisH, FaEnvelope, FaHome, FaUser } from 'react-icons/fa';
+import Quip from '../Quip/Quip';
 import styles from './LeftNav.module.css';
 
 
@@ -34,6 +35,7 @@ export default function LeftNav() {
 					<FaEllipsisH /> <span className={styles.title}>More</span>
 				</h2>
 			</Link>
+			<Quip />
 		</div>
     )
 }

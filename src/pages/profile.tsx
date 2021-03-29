@@ -39,8 +39,8 @@ export default function Profile() {
                 <div className={styles.profile}>
                     <div className={styles.profile_info}>
                         <div className={styles.profile_head}>
-                            <span className={styles.back_arrow} onClick={() => router.back()}>
-                                <FaArrowLeft />
+                            <span onClick={() => router.back()}>
+                                <FaArrowLeft className={styles.back_arrow} />
                             </span>
                             <span className={styles.nickname}>
                                 <h3>{data.me.name}</h3>

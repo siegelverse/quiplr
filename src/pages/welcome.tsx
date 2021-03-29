@@ -33,7 +33,7 @@ export default function WelcomePage() {
             </div>
     
             <div className={styles.center}>
-                <img src={'../../quiplr-logo-light.svg'} alt="logo" style={{ width: "100px" }} />
+                <img src={'../../quiplr-logo-dark.svg'} alt="logo" style={{ width: "150px" }} />
                 <h1>
                     See what's making people
                 <br />
