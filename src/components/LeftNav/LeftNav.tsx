@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FaBell, FaEllipsisH, FaEnvelope, FaHome, FaUser } from 'react-icons/fa';
+import Logout from '../Logout/Logout';
 import Quip from '../Quip/Quip';
 import styles from './LeftNav.module.css';
 
@@ -36,6 +37,7 @@ export default function LeftNav() {
 				</h2>
 			</Link>
 			<Quip />
+			<Logout />
 		</div>
     )
 }
