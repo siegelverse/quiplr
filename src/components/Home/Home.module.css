@@ -1,0 +1,83 @@
+.home {
+    position: relative;
+    border-radius: 5px;
+    background: var(--background-color);
+    padding-top: 0;
+}
+
+.home {
+	position: relative;
+	border: 1px solid var(--accent);
+}
+
+.home_header {
+	border-bottom: 1px solid var(--accent);
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr 12fr;
+}
+
+.home_title {
+	text-align: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	width: 90%;
+	padding: 10px;
+}
+
+.home_text {
+	font-weight: bold;
+	font-size: 20px;
+
+	margin-top: 0;
+}
+
+.home_quip_button {
+	/* width: 25%; */
+	justify-self: end;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: white;
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
+	font-size: 15px;
+	border: 1px solid var(--primary-color);
+	margin-right: 10px;
+}
+.home_quip_button:hover {
+	background-color: white;
+	color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+}
+.home_quip_button:focus {
+	outline: none;
+}
+
+.quip_header {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1.5fr 7.5fr;
+    margin-left: 10px;
+}
+
+.quip_container {
+    border-bottom: 1px solid var(--accent);
+    margin-top: 10px;
+}
+
+.quip_content {
+    margin-left: 10px;
+}
+
+.date_time {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.name {
+    margin-top: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  
+}

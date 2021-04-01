@@ -1,14 +1,14 @@
+import Home from "../components/Home/Home";
 import IsAuth from "../components/IsAuth";
 import Layout from "../components/Layout/Layout";
-import Users from "../components/Users";
 import WelcomePage from "./welcome";
 
 
-export default function Home() {
+export default function App() {
   return (
     <Layout>
       <IsAuth>
-        <Users />
+        <Home />
       </IsAuth>
     </Layout>
   )

@@ -11,6 +11,7 @@
     "@apollo/client": "^3.3.12",
     "@types/node-sass": "^4.11.1",
     "apollo-link-context": "^1.0.20",
+    "date-fns": "^2.19.0",
     "formik": "^2.2.6",
     "graphql": "^15.5.0",
     "next": "10.0.9",
