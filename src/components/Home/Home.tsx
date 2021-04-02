@@ -7,6 +7,7 @@ import Link from 'next/link';
 import LeftNav from '../LeftNav/LeftNav';
 import profileStyles from '../../styles/profile.module.css';
 import AllQuips from '../AllQuips/AllQuips';
+import HomePageQuip from '../HomePageQuip/HomePageQuip';
 
 export const ME_QUERY = gql`
     query me {
@@ -40,6 +41,7 @@ export default function Home() {
                     <div className={styles.home_header}>
                         <h3 className={styles.home_title}>Home</h3>
                         <h1>quips</h1>
+                        <HomePageQuip />
                         <AllQuips />
                     </div>
                 </div>
