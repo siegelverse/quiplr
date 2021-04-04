@@ -6,10 +6,10 @@ import WelcomePage from "./welcome";
 
 export default function App() {
   return (
-    <Layout>
+    <div>
       <IsAuth>
         <Home />
       </IsAuth>
-    </Layout>
+    </div>
   )
 }

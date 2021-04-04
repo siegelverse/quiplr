@@ -13,7 +13,7 @@
 .home_header {
 	border-bottom: 1px solid var(--accent);
 	display: grid;
-	grid-template-columns: 0.5fr 0.5fr 12fr;
+	grid-template-rows: 0.5fr 0.5fr auto;
 }
 
 .home_title {
@@ -52,17 +52,6 @@
 }
 .home_quip_button:focus {
 	outline: none;
-}
-
-.quip_header {
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr 1.5fr 7.5fr;
-    margin-left: 10px;
-}
-
-.quip_container {
-    border-bottom: 1px solid var(--accent);
-    margin-top: 10px;
 }
 
 .quip_content {

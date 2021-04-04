@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { subDays } from "date-fns";
 import { formatDistance } from "date-fns/esm";
 import gql from "graphql-tag";
-import styles from '../Home/Home.module.css';
+import styles from './AllQuips.module.css';
 
 const TWEETS_QUERY = gql`
     query TWEETS_QUERY {
@@ -50,7 +50,7 @@ export default function AllQuips() {
                             alt="avatar"
                         />
                         <h4 className={styles.name}>{tweet.author.name}</h4>
-                        {/* <p className={styles.date_time}>{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago</p> */}
+                        <p className={styles.date_time}>{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago</p>
                     </div>
                     <p className={styles.quip_content}>{tweet.content}</p>
                 </div>

@@ -3,7 +3,8 @@ import gql from 'graphql-tag';
 import { useMutation, useQuery } from '@apollo/client';
 import { ME_QUERY } from '../../pages/profile';
 import * as Yup from 'yup';
-import styles from '../Quip/Quip.module.css';
+import styles from './HomePageQuip.module.css';
+import { formatDistance } from 'date-fns';
 
 const CREATE_QUIP_MUTATION = gql`
     mutation createTweet($content: String) {
@@ -35,13 +36,14 @@ export default function HomePageQuip() {
             <Formik 
             initialValues={initialValues} 
             validationSchema={validationSchema}
-            onSubmit={async (values, {setSubmitting}) => {
+            onSubmit={async (values, {setSubmitting, resetForm}) => {
                 setSubmitting(true)
                 
                 await createTweet({
                     variables: values
                 })
                 setSubmitting(false)
+                resetForm()
             }}
             >
                 <Form className={styles.create_quip_form}>

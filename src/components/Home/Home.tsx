@@ -40,7 +40,6 @@ export default function Home() {
                 <div className={styles.home}>
                     <div className={styles.home_header}>
                         <h3 className={styles.home_title}>Home</h3>
-                        <h1>quips</h1>
                         <HomePageQuip />
                         <AllQuips />
                     </div>

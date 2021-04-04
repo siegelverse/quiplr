@@ -1,0 +1,26 @@
+.quip_header {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 0.5fr 0.5fr 2fr 7.5fr;
+    column-gap: 5px;
+    margin-left: 10px;
+}
+
+.quip_container {
+    border-bottom: 1px solid var(--accent);
+    margin-top: 10px;
+}
+
+.quip_content {
+    margin-left: 10px;
+}
+
+.date_time {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.name {
+    margin-top: 13px;
+}

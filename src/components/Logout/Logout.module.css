@@ -1,8 +1,6 @@
 .logout {
     display: flex;
     position: absolute;
-    justify-content: center; 
-    align-items: center;
     bottom: 0;
     padding-right: 10px;
 }
