@@ -13,6 +13,12 @@ export const ME_QUERY = gql`
         me {  
             id 
             name
+            likedTweet {
+                id
+                tweet {
+                    id
+                }
+            }
             Profile {
                 id
                 bio

@@ -1,10 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import gql from 'graphql-tag';
-import { useMutation, useQuery } from '@apollo/client';
-import { ME_QUERY } from '../../pages/profile';
+import { useMutation } from '@apollo/client';
 import * as Yup from 'yup';
 import styles from './HomePageQuip.module.css';
-import { formatDistance } from 'date-fns';
+import { TWEETS_QUERY } from '../AllQuips/AllQuips';
 
 const CREATE_QUIP_MUTATION = gql`
     mutation createTweet($content: String) {
@@ -20,7 +19,7 @@ interface QuipValues {
 
 export default function HomePageQuip() {
     const [createTweet] = useMutation(CREATE_QUIP_MUTATION, {
-        refetchQueries: [{query: ME_QUERY}]
+        refetchQueries: [{query: TWEETS_QUERY}]
     })
 
     const initialValues: QuipValues = {
