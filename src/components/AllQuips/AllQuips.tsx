@@ -3,7 +3,9 @@ import { subDays } from "date-fns";
 import { formatDistance } from "date-fns/esm";
 import gql from "graphql-tag";
 import { FaThumbsUp } from "react-icons/fa";
-import { ME_QUERY } from "../Home/Home";
+import { ME_QUERY } from "../../pages/profile";
+import DeleteLike from "../DeleteLike/DeleteLike";
+
 
 import LikeQuip from "../LikeQuip/LikeQuip";
 import styles from './AllQuips.module.css';
@@ -79,9 +81,7 @@ export default function AllQuips() {
                         {meData.me.likedTweet.map((t: likedTweets) => t.tweet.id).includes(tweet.id) ? 
                         (
                             <span>
-                                <span style={{marginRight: '5px'}}>
-                                    <FaThumbsUp />
-                                </span>
+                                <DeleteLike id={meData.me.likedTweet.filter((like: likedTweets) => like.tweet.id === tweet.id)[0].id} />
                                 {tweet.likes.length}
                             </span>
                         )
