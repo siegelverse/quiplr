@@ -7,6 +7,7 @@ import { FaArrowLeft, FaLink, FaUser } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import LeftNav from '../components/LeftNav/LeftNav';
+import PopularQuips from '../components/PopularQuips/PopularQuips';
 
 export const ME_QUERY = gql`
     query me {
@@ -78,7 +79,7 @@ export default function Profile() {
                     </div>
                 </div>  
                 <div className={styles.right}>
-                    Right
+                    <PopularQuips />
                 </div>  
             </div>
         </>

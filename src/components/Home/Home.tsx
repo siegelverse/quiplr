@@ -8,6 +8,7 @@ import LeftNav from '../LeftNav/LeftNav';
 import profileStyles from '../../styles/profile.module.css';
 import AllQuips from '../AllQuips/AllQuips';
 import HomePageQuip from '../HomePageQuip/HomePageQuip';
+import PopularQuips from '../PopularQuips/PopularQuips';
 
 export const ME_QUERY = gql`
     query me {
@@ -45,7 +46,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    Right
+                    <PopularQuips />
                 </div>  
             </div>
         </>
