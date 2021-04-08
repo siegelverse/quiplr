@@ -4,6 +4,7 @@ import { formatDistance } from "date-fns/esm";
 import gql from "graphql-tag";
 import { FaThumbsUp } from "react-icons/fa";
 import { ME_QUERY } from "../../pages/profile";
+import Comment from "../Comment/Comment";
 import DeleteLike from "../DeleteLike/DeleteLike";
 
 
@@ -17,6 +18,9 @@ export const TWEETS_QUERY = gql`
             createdAt
             content
             likes {
+                id
+            }
+            comments {
                 id
             }
             author {
@@ -47,6 +51,7 @@ export default function AllQuips() {
         content: string
         createdAt: Date
         likes: []
+        comments: []
         author: {
             id: number
             name: string
@@ -92,6 +97,15 @@ export default function AllQuips() {
                                 {tweet.likes.length}
                             </span>
                         )}
+                        <span style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+                            <Comment 
+                                avatar={tweet.author.Profile.avatar} 
+                                name={tweet.author.name} 
+                                tweet={tweet.content}
+                                id={tweet.id} 
+                            />
+                            {tweet.comments.length > 0 ? tweet.comments.length : null}
+                        </span>
                     </div>
                 </div>
             ))}
