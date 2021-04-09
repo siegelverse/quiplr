@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { subDays } from "date-fns";
 import { formatDistance } from "date-fns/esm";
 import gql from "graphql-tag";
+import Link from "next/link";
 import { FaThumbsUp } from "react-icons/fa";
 import { ME_QUERY } from "../../pages/profile";
 import Comment from "../Comment/Comment";
@@ -72,16 +73,18 @@ export default function AllQuips() {
         <div>
             {data.tweets.map((tweet: AllQuips) => (
                 <div className={styles.quip_container}>
-                    <div className={styles.quip_header}>
-                        <img 
-                            src={tweet.author.Profile.avatar} 
-                            style={{ width: '40px', borderRadius: '50%' }} 
-                            alt="avatar"
-                        />
-                        <h4 className={styles.name}>{tweet.author.name}</h4>
-                        <p className={styles.date_time}>{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago</p>
-                    </div>
-                    <p className={styles.quip_content}>{tweet.content}</p>
+                    <Link href={{pathname: '/quip/[id]', query: {id: tweet.id}}} key={tweet.id}>
+                        <div className={styles.quip_header}>
+                            <img 
+                                src={tweet.author.Profile.avatar} 
+                                style={{ width: '40px', borderRadius: '50%' }} 
+                                alt="avatar"
+                            />
+                            <h4 className={styles.name}>{tweet.author.name}</h4>
+                            <p className={styles.date_time}>{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago</p>
+                        </div>
+                    </Link>
+                        <p className={styles.quip_content}>{tweet.content}</p>
                     <div className={styles.likes}>
                         {meData.me.likedTweet.map((t: likedTweets) => t.tweet.id).includes(tweet.id) ? 
                         (
