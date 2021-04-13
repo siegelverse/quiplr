@@ -85,7 +85,7 @@ export default function AllQuips() {
                             <p className={styles.date_time}>{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago</p>
                         </div>
                     </Link>
-                        <p className={styles.quip_content}>{tweet.content}</p>
+                    <p className={styles.quip_content}>{tweet.content}</p>
                     <div className={styles.likes}>
                         {meData.me.likedTweet.map((t: likedTweets) => t.tweet.id).includes(tweet.id) ? 
                         (

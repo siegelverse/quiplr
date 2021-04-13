@@ -1,3 +1,18 @@
 .edit_button {
-    
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: var(--background-color-dark);
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+	font-size: 15px;
+	border: 1px solid var(--primary-color);
+    cursor: pointer;
+}
+.edit_button:hover {
+	background-color: var(--button-hover-color);
+	border: 1px solid var(--primary-color);
+}
+.edit_button:focus {
+	outline: none;
 }

@@ -3,6 +3,7 @@
     border-radius: 5px;
     background: var(--background-color);
     padding-top: 0;
+
 }
 
 .home {
@@ -11,6 +12,8 @@
 }
 
 .home_header {
+	height: 100vh;
+	overflow: scroll;
 	border-bottom: 1px solid var(--accent);
 	display: grid;
 	grid-template-rows: 0.5fr 0.5fr auto;
@@ -18,10 +21,10 @@
 
 .home_title {
 	text-align: left;
-	margin-left: 10px;
 	margin-bottom: 10px;
 	margin-top: 5px;
-	width: 90%;
+	border-bottom: 1px solid var(--accent);
+	width: 100%;
 	padding: 10px;
 }
 

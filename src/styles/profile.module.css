@@ -1,4 +1,5 @@
 .profile {
+	overflow: scroll;
 	position: relative;
 	border: 1px solid var(--accent);
 }
@@ -124,6 +125,10 @@
     }
 
     .left {
+        display: none;
+    }
+
+	.right {
         display: none;
     }
 }

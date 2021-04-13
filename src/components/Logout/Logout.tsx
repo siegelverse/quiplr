@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import { useQuery } from '@apollo/client';
 import { ME_QUERY } from '../../pages/profile';
-import { FaEllipsisH } from 'react-icons/fa';
+import { FaEllipsisH, FaUser } from 'react-icons/fa';
 
 export default function Logout() {
     const router = useRouter();
@@ -33,7 +33,7 @@ export default function Logout() {
         <div className={styles.logout}>
             <span onClick={openModal} className={styles.container}>
                 <h4 className={styles.info}>
-                    <img src={data.me.Profile.avatar} style={{ width: '35px', borderRadius: '50%' }} alt='avatar' />
+                    <img src={data.me.Profile ? data.me.Profile.avatar : <FaUser />} style={{ width: '35px', borderRadius: '50%' }} alt='avatar' />
                     <span style={{ marginLeft: '10px' }}>{data.me.name}</span>
                     <span style={{ marginLeft: '20px' }}>
                         <FaEllipsisH /> 

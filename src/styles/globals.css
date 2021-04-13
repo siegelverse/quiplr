@@ -51,28 +51,28 @@ button span {
   border-radius: 25px;
 }
 button {
-    background-color: var(--primary-color);
-    border: 0;
-    color: var(--background-color-dark);
-    font-weight: bold;
+  background-color: var(--primary-color);
+  border: 0;
+  color: var(--background-color-dark);
+  font-weight: bold;
 }
 button span {
-    display: block;
-    padding: 0.4em 0.2em;
-    transition: all 0.1s linear;
-    font-size: 15px;
+  display: block;
+  padding: 0.4em 0.2em;
+  transition: all 0.1s linear;
+  font-size: 15px;
 }
 button:hover {
-    background: var(--button-hover-color);
+  background: var(--button-hover-color);
 }
 button:active span {
-    background-color: rbga(0, 0, 0, 0.2);
+  background-color: rbga(0, 0, 0, 0.2);
 }
 button span:focus {
-    outline: 0;
+  outline: 0;
 }
 button:disabled {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 

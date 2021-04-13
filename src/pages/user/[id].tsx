@@ -10,6 +10,7 @@ import CreateProfile from '../../components/CreateProfile/CreateProfile';
 import PopularQuips from '../../components/PopularQuips/PopularQuips';
 import { ME_QUERY } from '../profile';
 import FollowUser from '../../components/FollowUser/FollowUser';
+import UnfollowUser from '../../components/UnfollowUser/UnfollowUser';
 
 export const USER_QUERY = gql`
     query user($id: Int) {
@@ -72,7 +73,11 @@ export default function SingleUser() {
                             : <FaUser size={70} />}
                         </div>
                         <div className={styles.make_profile}>
-                            <FollowUser id={data.user.id} name={data.user.name} avatar={data.user.Profile.avatar} />
+                            {idOfFollowers.includes(data.user.id) ? (
+                                <UnfollowUser id={getFollowId[0].id} />
+                                ):
+                                <FollowUser id={data.user.id} name={data.user.name} avatar={data.user.Profile.avatar} />
+                            }
                         </div>
 
                         <h3 className={styles.name}>{data.user.name}</h3>

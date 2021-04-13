@@ -8,6 +8,7 @@
 }
 
 .quip_container {
+    cursor: pointer;
     border-bottom: 1px solid var(--accent);
     margin-top: 10px;
 }
@@ -22,6 +23,7 @@
 }
 
 .name {
+    cursor: pointer;
     margin-top: 13px;
 }
 

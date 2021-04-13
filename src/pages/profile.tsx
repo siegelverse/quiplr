@@ -8,6 +8,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import LeftNav from '../components/LeftNav/LeftNav';
 import PopularQuips from '../components/PopularQuips/PopularQuips';
+import LikedQuips from '../components/LikedQuips/LikedQuips';
+import Following from '../components/Following/Following';
 
 export const ME_QUERY = gql`
     query me {
@@ -24,6 +26,16 @@ export const ME_QUERY = gql`
                 id
                 tweet {
                     id
+                    content
+                    createdAt
+                    author {
+                        id 
+                        name 
+                        Profile {
+                            id 
+                            avatar
+                        }
+                    }
                 }
             }
             Profile {
@@ -41,7 +53,7 @@ export default function Profile() {
     const router = useRouter();
     const { loading, error, data } = useQuery(ME_QUERY);
     if (loading) return <p>Loading...</p>
-    // if (error) return <p>{error.message}</p>
+    if (error) return <p>{error.message}</p>
     console.log(data)
     return (
         <>
@@ -60,7 +72,7 @@ export default function Profile() {
                             </span>
                         </div>
                         <div className={styles.avatar}>
-                            {data.me.Profile.avatar ?  
+                            {data.me.Profile?  
                             (<img src={data.me.Profile.avatar} alt='avatar' style={{ width: '125px', borderRadius: '50%' }} />)
                             : <FaUser size={70} />}
                         </div>
@@ -70,7 +82,9 @@ export default function Profile() {
 
                         <h3 className={styles.name}>{data.me.name}</h3>
 
-                        <p className={styles.location}>{data.me.Profile.location}</p>
+                        {data.me.Profile ? (
+                            <p className={styles.location}>{data.me.Profile.location}</p>
+                        ): null}
 
                         {data.me.Profile ? (
                             <p>
@@ -79,10 +93,13 @@ export default function Profile() {
                             </p>
                         ) : null}
                         <div className={styles.followers}>
-                            <p>0 following</p>
+                            <Following />
                             <p>0 followers</p>
                         </div>
                     </div>
+                    {data.me.likedTweet.tweet ? (
+                        <LikedQuips quips={data.me} />
+                    ): null}
                 </div>  
                 <div className={styles.right}>
                     <PopularQuips />
