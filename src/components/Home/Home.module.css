@@ -67,6 +67,17 @@
     margin-top: 0px;
 }
 
+.back_arrow {
+	margin: 10px;
+	color: var(--primary-color);
+	margin-top: 10;
+    cursor: pointer;
+	transition: all 1s;
+}
+.back_arrow:hover {
+	transform:  rotate(360deg);
+}
+
 @media only screen and (max-width: 600px) {
   
 }

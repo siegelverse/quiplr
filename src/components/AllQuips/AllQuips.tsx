@@ -39,7 +39,6 @@ export const TWEETS_QUERY = gql`
 export default function AllQuips() {
     const { loading, error, data } = useQuery(TWEETS_QUERY);
     const { loading: meLoading, error: meError, data: meData } = useQuery(ME_QUERY);
-    console.log(meData)
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>{error.message}</p>
@@ -80,7 +79,9 @@ export default function AllQuips() {
                                 style={{ width: '40px', borderRadius: '50%' }} 
                                 alt="avatar"
                             />
-                            <h4 className={styles.name}>{tweet.author.name}</h4>
+                            <Link href={{pathname: '/user/[id]', query: {id: tweet.author.id}}} >
+                                <h4 className={styles.name}>{tweet.author.name}</h4>
+                            </Link>
                             <p className={styles.date_time}>{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago</p>
                         </div>
                     </Link>
