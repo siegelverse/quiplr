@@ -1,4 +1,4 @@
-import styles from '../../components/Home/Home.module.css';
+import styles from './quip.module.css';
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import { FaArrowLeft } from 'react-icons/fa';
@@ -6,7 +6,6 @@ import { useRouter, withRouter } from 'next/router';
 import profileStyles from '../../styles/profile.module.css';
 import LeftNav from '../../components/LeftNav/LeftNav';
 import PopularQuips from '../../components/PopularQuips/PopularQuips';
-import { ParsedUrlQuery } from 'node:querystring';
 import CreateReply from '../../components/CreateReply/CreateReply';
 
 
@@ -115,7 +114,7 @@ export default function SingleQuip() {
                         ))}
                     </div>
                 </div>
-                <div className={styles.right}>
+                <div className={profileStyles.right}>
                     <PopularQuips />
                 </div>  
             </div>

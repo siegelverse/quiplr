@@ -10,12 +10,33 @@ import LeftNav from '../components/LeftNav/LeftNav';
 import PopularQuips from '../components/PopularQuips/PopularQuips';
 import LikedQuips from '../components/LikedQuips/LikedQuips';
 import Following from '../components/Following/Following';
+import React from 'react';
+import ProfileQuips from '../components/ProfileQuips/ProfileQuips';
 
 export const ME_QUERY = gql`
     query me {
         me {  
             id 
             name
+            tweets {
+            id 
+            createdAt
+            content
+            likes {
+                id
+            }
+            comments {
+                id
+            }
+            author {
+                id 
+                name
+                Profile {
+                    id 
+                    avatar
+                }
+            }
+        }
             Following {
                 id 
                 followId
@@ -83,6 +104,10 @@ export default function Profile() {
                         <h3 className={styles.name}>{data.me.name}</h3>
 
                         {data.me.Profile ? (
+                            <p>{data.me.Profile.bio}</p>
+                        ): null}
+
+                        {data.me.Profile ? (
                             <p className={styles.location}>{data.me.Profile.location}</p>
                         ): null}
 
@@ -97,6 +122,9 @@ export default function Profile() {
                             <p>0 followers</p>
                         </div>
                     </div>
+                        {data.me.tweets ? (
+                            <ProfileQuips />
+                        ): null}
                     {data.me.likedTweet.tweet ? (
                         <LikedQuips quips={data.me} />
                     ): null}

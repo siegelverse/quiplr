@@ -1,0 +1,39 @@
+.home {
+    position: relative;
+    border-radius: 5px;
+    background: var(--background-color);
+    padding-top: 0;
+
+}
+
+.home {
+	position: relative;
+	border: 1px solid var(--accent);
+}
+
+.home_header {
+	display: grid;
+	overflow: scroll;
+	border-bottom: 1px solid var(--accent);
+	grid-template-rows: 0.5fr 0.5fr auto;
+}
+
+.home_title {
+	text-align: left;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	border-bottom: 1px solid var(--accent);
+	width: 100%;
+	padding: 10px;
+}
+
+.back_arrow {
+	margin: 10px;
+	color: var(--primary-color);
+	margin-top: 10;
+    cursor: pointer;
+	transition: all 1s;
+}
+.back_arrow:hover {
+	transform:  rotate(360deg);
+}
