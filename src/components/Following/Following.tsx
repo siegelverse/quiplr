@@ -41,7 +41,7 @@ export default function Following() {
             <div className={styles.header}></div>
 				<div style={{ marginLeft: "20px" }}>
 					{data.me.Following.map((person: any) => (
-						<div style={{ borderBottom: 'var(--accent)', padding: "5px" }}>
+						<div style={{ borderBottom: 'var(--accent)', padding: "5px" }} key={person.id}>
 							<div className={styles.quip_header}>
 								<img src={person.avatar} style={{ width: "40px", borderRadius: "50%" }} alt="avatar" />
 

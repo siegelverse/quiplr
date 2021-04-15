@@ -1,9 +1,7 @@
 const withTM = require('next-transpile-modules')(['date-fns/esm']);
 
-module.exports = {
+module.exports = withTM({
     env: {
         CLOUDINARY_URL: process.env.CLOUDINARY_URL,
     },
-};
-
-module.exports = withTM();
+})

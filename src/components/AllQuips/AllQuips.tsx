@@ -49,7 +49,7 @@ export default function AllQuips() {
     interface AllQuips {
         id: number
         content: string
-        createdAt: Date
+        createdAt: any
         likes: []
         comments: []
         author: {
@@ -68,9 +68,14 @@ export default function AllQuips() {
             id: number
         }
     }
+
+    const sortQuipsByDate = data.tweets.map((quip: AllQuips) => quip).sort(function(a: AllQuips, b: AllQuips) {
+        return new Date(b.createdAt) - new Date(a.createdAt)
+    })
+
     return (
         <div>
-            {data.tweets.map((tweet: AllQuips) => (
+            {sortQuipsByDate.map((tweet: AllQuips) => (
                 <div className={styles.quip_container}>
                     <Link href={{pathname: '/quip/[id]', query: {id: tweet.id}}} key={tweet.id}>
                         <div className={styles.quip_header}>
