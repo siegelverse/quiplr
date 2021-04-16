@@ -11,6 +11,8 @@ import PopularQuips from '../../components/PopularQuips/PopularQuips';
 import { ME_QUERY } from '../profile';
 import FollowUser from '../../components/FollowUser/FollowUser';
 import UnfollowUser from '../../components/UnfollowUser/UnfollowUser';
+import React from 'react';
+import UserQuips from '../../components/UserQuips/UserQuips';
 
 export const USER_QUERY = gql`
     query user($id: Int) {
@@ -95,6 +97,7 @@ export default function SingleUser() {
                             <p>0 followers</p>
                         </div>
                     </div>
+                    <UserQuips id={parseInt(id)} />
                 </div>  
                 <div className={styles.right}>
                     <PopularQuips />

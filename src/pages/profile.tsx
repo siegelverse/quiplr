@@ -13,6 +13,7 @@ import Following from '../components/Following/Following';
 import React from 'react';
 import ProfileQuips from '../components/ProfileQuips/ProfileQuips';
 
+
 export const ME_QUERY = gql`
     query me {
         me {  
