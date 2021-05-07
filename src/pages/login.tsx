@@ -37,7 +37,7 @@ export default function Login() {
     return (
         <div className={styles.login_container}>
             <img src={'../../quiplr-logo-dark.svg'} alt='logo' style={{width: '100px'}} className={styles.logo}/>
-            <h3 className={styles.message}>Log in to quipler</h3>
+            <h3 className={styles.message}>Log in to quiplr</h3>
             <Formik 
             initialValues={initialValues} 
             validationSchema={validationSchema}
