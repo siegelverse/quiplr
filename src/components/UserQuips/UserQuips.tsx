@@ -73,7 +73,7 @@ export default function UserQuips({ id }) {
     console.log(id)
 
     const sortQuipsByDate = getUserQuips.map((quip: UserQuips) => quip).sort(function(a: UserQuips, b: UserQuips) {
-        return new Date(b.createdAt) - new Date(a.createdAt)
+        return b.createdAt - a.createdAt
     })
     return (
         <div>
