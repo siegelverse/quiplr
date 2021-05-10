@@ -80,7 +80,7 @@ export default function ProfileQuips() {
                     <Link href={{pathname: '/quip/[id]', query: {id: tweet.id}}} key={tweet.id}>
                         <div className={styles.quip_header}>
                             <img 
-                                src={tweet.author.Profile.avatar} 
+                                src={tweet.author.Profile?.avatar} 
                                 style={{ width: '40px', borderRadius: '50%' }} 
                                 alt="avatar"
                             />
@@ -108,7 +108,7 @@ export default function ProfileQuips() {
                         )}
                         <span style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
                             <Comment 
-                                avatar={tweet.author.Profile.avatar} 
+                                avatar={tweet.author.Profile?.avatar} 
                                 name={tweet.author.name} 
                                 tweet={tweet.content}
                                 id={tweet.id} 

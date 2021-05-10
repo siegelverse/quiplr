@@ -54,7 +54,7 @@ export default function PopularQuips() {
                 <div className={styles.popular_quip_container} key={quip.id}>
                     <div className={styles.date_title}>
                         <div className={styles.title_logo}>
-                            <img src={quip.author.Profile.avatar} style={{ width: '40px', borderRadius: '50%' }} alt="avatar" />
+                            <img src={quip.author.Profile?.avatar} style={{ width: '40px', borderRadius: '50%' }} alt="avatar" />
                             <p className={styles.quip_content}>{quip.content}</p>
                         </div>
                         <p className={styles.date}>
