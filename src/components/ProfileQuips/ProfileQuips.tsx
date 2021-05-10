@@ -71,7 +71,7 @@ export default function ProfileQuips() {
 
 
     const sortQuipsByDate = meData.me.tweets.map((quip: AllQuips) => quip).sort(function(a: AllQuips, b: AllQuips) {
-        return new Date(b.createdAt) - new Date(a.createdAt)
+        return b.createdAt - a.createdAt
     })
     return (
         <div>

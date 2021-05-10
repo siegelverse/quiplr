@@ -70,7 +70,7 @@ export default function AllQuips() {
     }
 
     const sortQuipsByDate = data.tweets.map((quip: AllQuips) => quip).sort(function(a: AllQuips, b: AllQuips) {
-        return new Date(b.createdAt) - new Date(a.createdAt)
+        return b.createdAt - a.createdAt
     })
 
     return (
