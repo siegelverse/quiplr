@@ -82,5 +82,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-  
+	.left {
+        display: none;
+    }
+
+    .right {
+        display: none;
+    }
 }
