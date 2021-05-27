@@ -100,7 +100,7 @@
     color: var(--primary-color);
 }
 
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 600px) {
     .main .left {
         display: none;
     }
