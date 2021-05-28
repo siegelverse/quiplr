@@ -1,6 +1,6 @@
 export const logoutModalStyles = {
     content: {
-        top: '80%',
+        top: '85%',
         left: '20%',
         right: 'auto',
         bottom: 'auto',
